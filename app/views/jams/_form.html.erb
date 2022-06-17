@@ -16,10 +16,10 @@
     <%= form.text_field :name %>
   </div>
 
-  <!-- <div>
+  <div>
     <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
-  </div> -->
+    <%= form.collection_select :user_id, User.order(:name), :id, :email%>
+  </div>
 
   <div>
     <%= form.submit %>

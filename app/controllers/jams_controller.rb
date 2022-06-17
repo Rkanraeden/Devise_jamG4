@@ -38,7 +38,7 @@ class JamsController < ApplicationController
   # PATCH/PUT /jams/1 or /jams/1.json
   def update
     respond_to do |format|
-      if @jam.update(jam_params)
+      if @jam.update(jam_params.merge(user: current_user))
         format.html { redirect_to jam_url(@jam), notice: "Jam was successfully updated." }
         format.json { render :show, status: :ok, location: @jam }
       else
